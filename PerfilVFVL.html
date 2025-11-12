@@ -34,11 +34,9 @@
     a:hover{text-decoration:underline}
     .container{max-width:1100px;margin:0 auto;padding:28px}
     header.hero{display:grid;grid-template-columns:140px 1fr;gap:24px;align-items:center;margin-top:24px}
-    .avatar{width:140px;height:140px;border-radius:24px;background:linear-gradient(135deg,#334155,#1f2937);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:40px;color:#fff}
+    .avatar{width:140px;height:140px;border-radius:24px;object-fit:cover;box-shadow:var(--shadow);border:2px solid rgba(255,255,255,.15)}
     .badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(180deg,var(--card),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.08);padding:6px 10px;border-radius:999px;color:var(--muted)}
     .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:var(--muted);margin:2px 6px 0 0;font-size:13px}
-    nav{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px}
-    nav a{padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
     section{margin:36px 0}
     .card{grid-column:span 12;background:var(--card);border-radius:20px;padding:22px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
@@ -54,21 +52,14 @@
     .item{padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
     .kpi{display:grid;grid-template-columns:1fr auto;gap:12px}
     .kpi strong{font-size:28px}
-    .exp{display:grid;gap:18px}
-    .exp-item{display:grid;gap:6px;padding:14px;border-radius:14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06)}
-    .exp-item header{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
-    .exp-item .where{font-weight:700}
-    .exp-item .when,.exp-item .city{color:var(--muted)}
-    .list{margin:6px 0 0;padding-left:18px}
     footer{margin:40px 0;color:var(--muted);text-align:center}
     .theme{position:fixed;bottom:18px;right:18px}
     .small{font-size:14px;color:var(--muted)}
     @media (min-width:900px){
       .card.span-6{grid-column:span 6}
-      .card.span-4{grid-column:span 4}
     }
     @media print{
-      nav,.theme,.cta{display:none}
+      .theme,.cta{display:none}
       body{background:#fff;color:#111}
       .card{box-shadow:none;border:1px solid #ddd}
     }
@@ -77,20 +68,18 @@
 <body data-theme="dark" itemscope itemtype="https://schema.org/Person">
   <div class="container">
     <header class="hero">
-      <div class="avatar" aria-hidden="true" itemprop="image" title="Foto/Avatar">
-        VV
-      </div>
+      <!-- Avatar con tu foto -->
+      <img src="vicfoto.jpg" alt="Foto de Víctor Francisco Vázquez López" class="avatar" itemprop="image">
+
       <div>
         <h1 class="title" itemprop="name">Víctor Francisco Vázquez López</h1>
         <p class="subtitle" itemprop="jobTitle">Director de Proyectos • Analítica Avanzada • Transformación Digital • Desarrollador de Aplicaciones Móviles</p>
-        
-        <!-- Bloque de contacto visible -->
+
         <div class="row" style="margin-top:10px; flex-direction:column; align-items:flex-start; gap:4px;">
           <span class="badge">📍 Ciudad de México, México</span>
           <span class="badge">✉️ <a href="mailto:victor@hht.mx" style="color:inherit; text-decoration:none;">victor@hht.mx</a></span>
           <span class="badge">📱 <a href="mailto:victorsensate1973@gmail.com" style="color:inherit; text-decoration:none;">victorsensate1973@gmail.com</a></span>
           <span class="badge">☎️ +52 55 8535 5718</span>
-          <a class="badge" href="https://www.linkedin.com/in/v%C3%ADctor-v-1a7a88/" target="_blank" rel="noopener" itemprop="sameAs">🔗 LinkedIn</a>
         </div>
       </div>
     </header>
@@ -136,17 +125,15 @@
     <section id="contacto" class="grid">
       <article class="card span-6">
         <h3>Contacto</h3>
-        <p>¿Interesado en colaborar o agendar una llamada? Escríbeme o conéctame en LinkedIn.</p>
+        <p>¿Interesado en colaborar o agendar una llamada? Escríbeme directamente.</p>
         <div class="cta">
           <a class="btn" href="mailto:victor@hht.mx">✉️ Enviar correo</a>
           <a class="btn ghost" href="mailto:victorsensate1973@gmail.com">📱 Contacto móvil iOS</a>
-          <a class="btn ghost" href="https://www.linkedin.com/in/v%C3%ADctor-v-1a7a88/" target="_blank" rel="noopener">🔗 Ver LinkedIn</a>
         </div>
         <p class="small" style="margin-top:10px">Teléfono: <strong>+52 55 8535 5718</strong> • Ciudad de México</p>
       </article>
     </section>
 
-    <!-- Pie de página actualizado -->
     <footer>
       © <span id="y"></span> Víctor Francisco Vázquez López · 
       <a href="mailto:victor@hht.mx" style="color:inherit; text-decoration:none;">victor@hht.mx</a> |
@@ -158,7 +145,7 @@
   <button class="btn theme" id="themeToggle" aria-label="Cambiar tema">🌓</button>
 
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    document.querySelectorAll('a[href^=\"#\"]').forEach(a=>{
       a.addEventListener('click',e=>{
         const id=a.getAttribute('href');
         if(id.length>1){
