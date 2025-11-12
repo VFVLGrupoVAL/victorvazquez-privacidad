@@ -83,12 +83,14 @@
       <div>
         <h1 class="title" itemprop="name">Víctor Francisco Vázquez López</h1>
         <p class="subtitle" itemprop="jobTitle">Director de Proyectos • Analítica Avanzada • Transformación Digital • Desarrollador de Aplicaciones Móviles</p>
-        <div class="row" style="margin-top:6px">
-          <span class="badge">Ciudad de México, México</span>
-          <a class="badge" href="#contacto">victor@hht.mx</a>
-          <a class="badge" href="mailto:victorsensate1973@gmail.com">victorsensate1973@gmail.com</a>
-          <a class="badge" href="https://www.linkedin.com/in/v%C3%ADctor-v-1a7a88/" target="_blank" rel="noopener" itemprop="sameAs">LinkedIn</a>
-          <span class="badge" itemprop="telephone">+52 55 8535 5718</span>
+        
+        <!-- Bloque de contacto visible -->
+        <div class="row" style="margin-top:10px; flex-direction:column; align-items:flex-start; gap:4px;">
+          <span class="badge">📍 Ciudad de México, México</span>
+          <span class="badge">✉️ <a href="mailto:victor@hht.mx" style="color:inherit; text-decoration:none;">victor@hht.mx</a></span>
+          <span class="badge">📱 <a href="mailto:victorsensate1973@gmail.com" style="color:inherit; text-decoration:none;">victorsensate1973@gmail.com</a></span>
+          <span class="badge">☎️ +52 55 8535 5718</span>
+          <a class="badge" href="https://www.linkedin.com/in/v%C3%ADctor-v-1a7a88/" target="_blank" rel="noopener" itemprop="sameAs">🔗 LinkedIn</a>
         </div>
       </div>
     </header>
@@ -96,7 +98,12 @@
     <section id="sobre-mi" class="grid">
       <article class="card span-6">
         <h3>Sobre mí</h3>
-        <p itemprop="description">Más de 25 años liderando iniciativas tecnológicas en analítica avanzada, machine learning, BI, desarrollo de software y gestión de proyectos. Fundador de Grupo VAL y Human Tech, con trayectoria como Director de Proyectos en SAS para gobierno en México y Latinoamérica. También desarrollo aplicaciones móviles nativas para iOS, integrando SwiftUI, geolocalización, API REST y pruebas en TestFlight para distribución en App Store. Mi foco: resultados de negocio medibles, calidad y satisfacción del cliente.</p>
+        <p itemprop="description">
+          Más de 25 años liderando iniciativas tecnológicas en analítica avanzada, machine learning, BI, desarrollo de software y gestión de proyectos. 
+          Fundador de Grupo VAL y Human Tech, con trayectoria como Director de Proyectos en SAS para gobierno en México y Latinoamérica. 
+          También desarrollo aplicaciones móviles nativas para iOS, integrando SwiftUI, geolocalización, API REST y pruebas en TestFlight para distribución en App Store. 
+          Mi foco: resultados de negocio medibles, calidad y satisfacción del cliente.
+        </p>
         <div class="row" style="margin-top:12px">
           <span class="chip">PMBOK • Agile • Scrum • Kanban</span>
           <span class="chip">SAS Viya • ModelOps</span>
@@ -105,6 +112,7 @@
           <span class="chip">Gobierno de Datos • ISO 27001/27002</span>
         </div>
       </article>
+
       <article class="card span-6 kpi" aria-label="Indicadores">
         <div>
           <strong>70+ proyectos</strong>
@@ -138,8 +146,12 @@
       </article>
     </section>
 
+    <!-- Pie de página actualizado -->
     <footer>
-      © <span id="y"></span> Víctor Francisco Vázquez López · Hecho con HTML+CSS · Desarrollo iOS y Web
+      © <span id="y"></span> Víctor Francisco Vázquez López · 
+      <a href="mailto:victor@hht.mx" style="color:inherit; text-decoration:none;">victor@hht.mx</a> |
+      <a href="mailto:victorsensate1973@gmail.com" style="color:inherit; text-decoration:none;">victorsensate1973@gmail.com</a>
+      · Hecho con HTML+CSS · Desarrollo iOS y Web
     </footer>
   </div>
 
@@ -154,7 +166,7 @@
           document.querySelector(id)?.scrollIntoView({behavior:'smooth'});
         }
       })
-    })
+    });
     const key='vv-theme';
     const btn=document.getElementById('themeToggle');
     const root=document.body;
@@ -163,7 +175,7 @@
     btn.addEventListener('click',()=>{
       const next = root.getAttribute('data-theme')==='light'?'dark':'light';
       root.setAttribute('data-theme',next);localStorage.setItem(key,next);
-    })
+    });
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
